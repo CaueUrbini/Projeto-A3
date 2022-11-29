@@ -33,9 +33,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
 
@@ -102,6 +102,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/group.png"))); // NOI18N
+        jMenu1.setText("Funcionarios");
+        jMenuBar1.add(jMenu1);
+
         jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/application_form_magnify.png"))); // NOI18N
         jMenu6.setText("Estoque");
 
@@ -113,10 +117,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu6.add(jMenuItem4);
-
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/group.png"))); // NOI18N
-        jMenu1.setText("Funcionarios");
-        jMenu6.add(jMenu1);
 
         jMenuBar1.add(jMenu6);
 
