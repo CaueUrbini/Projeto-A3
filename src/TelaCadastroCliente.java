@@ -35,6 +35,7 @@ public class TelaCadastroCliente extends javax.swing.JInternalFrame {
 
         jTextField1.setText("jTextField1");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/application_form.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
         jLabel2.setText("jLabel2");
