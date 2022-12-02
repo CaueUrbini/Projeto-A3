@@ -67,6 +67,7 @@ public class TelaCliente extends javax.swing.JInternalFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/phone.png"))); // NOI18N
         jLabel4.setText("Telefone");
 
         jButton4.setText("Confirmar");
