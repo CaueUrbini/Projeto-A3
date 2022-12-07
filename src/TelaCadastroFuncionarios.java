@@ -38,6 +38,7 @@ public class TelaCadastroFuncionarios extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setBorder(null);
+        setClosable(true);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dados Funcioário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(51, 102, 255))); // NOI18N
 
