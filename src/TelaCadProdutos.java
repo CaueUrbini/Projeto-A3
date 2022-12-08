@@ -112,6 +112,32 @@ public class TelaCadProdutos extends javax.swing.JInternalFrame {
 
     }
 
+    private void remover() {
+        int confirma = JOptionPane.showConfirmDialog(null, "tem certeza que deseja excluir o item", "ATENÇÃO", JOptionPane.YES_NO_OPTION);
+        if (confirma == JOptionPane.YES_OPTION) {
+            String sql = "delete from tbl_produto where id_produto=?";
+
+        
+        try {
+            
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1,txtId.getText());
+           int apagado= pst.executeUpdate();
+            if (apagado>0) {
+                JOptionPane.showMessageDialog(null, "usuario apagado com sucesso");
+                    txtNome.setText(null);
+                    txtCod.setText(null);
+                    txtPreco.setText(null);
+                    txtQuant.setText(null);
+            }
+    
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -185,6 +211,11 @@ public class TelaCadProdutos extends javax.swing.JInternalFrame {
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/delete.png"))); // NOI18N
         jButton3.setText("Excluir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         txtPreco.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 102, 255)));
 
@@ -284,6 +315,13 @@ public class TelaCadProdutos extends javax.swing.JInternalFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        remover();
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

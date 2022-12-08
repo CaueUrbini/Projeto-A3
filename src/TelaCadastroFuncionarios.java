@@ -7,15 +7,33 @@
  *
  * @author pedro
  */
+import java.sql.*;
+import Connection.ModuloConexao;
+import javax.swing.JOptionPane;
+
 public class TelaCadastroFuncionarios extends javax.swing.JInternalFrame {
+
+    Connection conexao = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
 
     /**
      * Creates new form TelaCadastroFuncionarios
      */
     public TelaCadastroFuncionarios() {
         initComponents();
+        conexao = ModuloConexao.conector();
     }
 
+    
+    private void cadastrar(){
+    
+    
+    
+    }
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
