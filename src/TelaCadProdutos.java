@@ -62,7 +62,7 @@ public class TelaCadProdutos extends javax.swing.JInternalFrame {
             pst.setString(3, txtCod.getText());
             pst.setString(4, txtPreco.getText());
             pst.setString(5, txtQuant.getText());
-            if ((txtNome.getText().isEmpty())||(txtCod.getText().isEmpty())) {
+            if ((txtNome.getText().isEmpty()) || (txtCod.getText().isEmpty())) {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
 
             } else {
@@ -76,6 +76,36 @@ public class TelaCadProdutos extends javax.swing.JInternalFrame {
                     txtQuant.setText(null);
                 }
             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }
+
+    private void alterar() {
+        String sql = "update tbl_produto set nome=?, cod_produto=?, valor=?, quantidade=? where id_produto=?";
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setString(1, txtNome.getText());
+            pst.setString(2, txtCod.getText());
+            pst.setString(3, txtPreco.getText());
+            pst.setString(4, txtQuant.getText());
+            pst.setString(5, txtId.getText());
+            if ((txtNome.getText().isEmpty()) || (txtCod.getText().isEmpty())) {
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos obrigatórios");
+
+            } else {
+
+                int adicionado = pst.executeUpdate();
+                if (adicionado > 0) {
+                    JOptionPane.showMessageDialog(null, "alteração realizada com sucesso");
+                    txtNome.setText(null);
+                    txtCod.setText(null);
+                    txtPreco.setText(null);
+                    txtQuant.setText(null);
+                }
+            }
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
@@ -244,6 +274,8 @@ public class TelaCadProdutos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        alterar();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
