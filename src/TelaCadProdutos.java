@@ -163,6 +163,8 @@ public class TelaCadProdutos extends javax.swing.JInternalFrame {
         txtQuant = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
+        setClosable(true);
+
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/zoom.png"))); // NOI18N
         jButton4.setText("Pesquisar");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
